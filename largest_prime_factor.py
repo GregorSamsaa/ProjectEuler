@@ -5,6 +5,7 @@ Docstring for largest_prime_factor
 <p>What is the largest prime factor of the number $600851475143$?</p>
 
 '''
+# This function would be more efficient with the 6k +-1 rule
 def is_prime(number):
     x = 2
     if number > 2:
