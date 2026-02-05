@@ -6,7 +6,7 @@ Docstring for largest_palindrome_product
 
 '''
 
-import math
+import math, time
 def is_palindrome(number):
     list = str(number)
     length = len(list)
@@ -28,10 +28,11 @@ def find_multipliers(number):
             if multiplier < 1000:
                 return i, multiplier
     
-
+start_time = time.perf_counter()
 for i in range(999999, 10000, -1):
     list = find_multipliers(i)
     if is_palindrome(i) and list:
         print(str(i) + " can be written as " + str(list[0]) + " * " + str(list[1]))
         break
-
+end_time = time.perf_counter()
+print(f"Execution Time: {(end_time - start_time) * 1000:.4f} ms")
